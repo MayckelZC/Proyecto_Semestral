@@ -6,74 +6,17 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0 auto;
-  color: #333;
-}
 
-.container-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.item {
-  border-radius: 10px;
-}
-
-.item:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.info-product {
-  padding: 15px 30px;
-}
-
-.item img {
-  width: 75%;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  transition: all 0.5s;
-}
-
-.item figure {
-  overflow: hidden;
-}
-
-.item:hover img {
-  transform: scale(1.2);
-}
-
-.info-product {
-  padding: 15px 30px;
-  line-height: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.precio {
-  font-size: 18px;
-  font-weight: 900;
-}
-
-.info-product button {
-  border: none;
-  background: none;
-  background-color: #000;
-  color: #fff;
-  padding: 15px 10px;
-  cursor: pointer;
-}
-
+/* Carrousel Imagenes */
 .carousel-item {
   width: 100%;
   height: 40vw;
 }
 
+/* Formulario de Registro*/
 .form-register {
   width: 400px;
-  background: #24303c;
+  background: orange;
   padding: 30px;
   margin: auto;
   margin-top: 100px;
@@ -90,12 +33,11 @@ body {
 
 .controls {
   width: 100%;
-  background: #24303c;
+  background: white;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
-  border: 1px solid #1f53c5;
-  font-family: "calibri";
+  border: 1px solid black;
   font-size: 18px;
   color: white;
 }
@@ -119,7 +61,7 @@ body {
 
 .form-register .botons {
   width: 100%;
-  background: #1f53c5;
+  background: black;
   border: none;
   padding: 12px;
   color: white;
@@ -129,4 +71,219 @@ body {
 
 .background-cuenta {
   background-color: white;
+}
+
+/* Formulario de Contacto*/
+.container-form {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  margin-top: 90px;
+}
+
+.container-form h2 {
+  margin-bottom: 15px;
+  font-size: 35px;
+}
+
+.container-form p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.container-form a {
+  font-size: 17px;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 15px;
+  color: black;
+  font-weight: 700;
+}
+
+.container-form a i {
+  color: orange;
+  margin-right: 10px;
+
+}
+
+.container-form form .campo,
+textarea {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 15px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  outline: 0px;
+}
+
+.container-form form textarea {
+  max-width: 530px;
+  min-height: 530px;
+  min-height: 140px;
+  max-height: 150px;
+}
+
+.container-form .btn-enviar {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: 0px;
+  background: white;
+  color: black;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.container-form .btn-enviar:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Pie de Pagina */
+.pie-pagina {
+  width: 100%;
+  background-color:orange;
+}
+
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+  width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+  color: #efefef;
+  margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  margin-right: 10px;
+  background-color: rgb(221, 160, 28);
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+  color: black;
+}
+
+.pie-pagina .grupo-2 {
+  background-color: orange;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+  font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+  .pie-pagina .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+}
+
+/* Navbar Color */
+.navbar{
+  background-color: orange;
+}
+
+.navbar-text,
+.navbar-brand
+.nav-link{
+  color: white;
+}
+
+/* Navbar Logo */
+.navbar-brand img{
+  display: flex;
+  width: 200px;
+}
+
+/* Background Colors */
+body{
+  background-color: white;
+}
+
+.background-cuenta{
+  background-color: white;
+}
+
+.background-contacto{
+  background-color: orange;
+}
+
+.background-index{
+  background-color: orange;
+}
+
+.background-figura{
+  background: orange;
+}
+
+.background-cuenta{
+  background-color: orange;
+}
+
+/* Navbar hover */
+.nav-link{
+  position: relative;
+}
+
+.nav-link:hover{
+
+}
+
+.nav-link::after{
+  content: '';
+  opacity: 0;
+  transition: all 0.2s;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after{
+  opacity: 1;
 }

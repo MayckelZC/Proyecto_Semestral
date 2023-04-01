@@ -9,13 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/estilos.css">
+        <!-- Iconos -->
+        <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
 </head>
 
-<body>
+<body class="background-figura">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid container">
-                <a href="index.html" class="navbar-brand">MaxGames</a>
+                <a href="index.html" class="navbar-brand"><img src="img/LogoMaxGames3.png" alt="Logo de MaxGames"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,7 +31,7 @@
                             <a href="figuras.html" class="nav-link">Figuras</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contacto</a>
+                            <a href="contacto.html" class="nav-link">Contacto</a>
                         </li>
                         </li>
                     </ul>
@@ -50,74 +53,183 @@
             </div>
             </div>
     </header>
-    <div class="container-items">
-        <div class="item">
-            <figure>
-                <img src="img/DenjiBanpresto.jpeg" alt="producto" />
-            </figure>
-            <div class="info-product">
-                <h2>Denji</h2>
-                <p class="precio">$25.000</p>
-                <button>Añadir al carrito</button>
+    <!-- Contenido -->
+    <main class="flex-shrink-0">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                <div class="col mb-2">
+                    <div class="card shadow-sm h-100">
+
+                        <a href="#">
+                            <img src="img/DenjiBanpresto.jpeg" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <p class="card-title">Figura de Denji</p>
+                            <p class="card-text"><strong>$ 35.000</strong></p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#"
+                                        class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a class="btn btn-success"
+                                    onClick="addProducto(1, '026a8089ff9ce1c296464138aad4080fe96bd25e')">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-2">
+                    <div class="card shadow-sm h-100">
+
+                        <a href="#">
+                            <img src="img/GojoBandai.jpg" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <p class="card-title">Figura de Satoru Gojo</p>
+                            <p class="card-text"><strong>$25.000</strong></p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#"
+                                        class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a class="btn btn-success"
+                                    onClick="addProducto(2, '6bef09442476435df6e73be9a94543ac9851af1d')">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-2">
+                    <div class="card shadow-sm h-100">
+
+                        <a href="#">
+                            <img src="img/ItadoriFig.jpg" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <p class="card-title">Figura de Itadori</p>
+                            <p class="card-text"><strong>$15.000</strong></p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#"
+                                        class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a class="btn btn-success"
+                                    onClick="addProducto(3, '491729fc9f89d4e67a0612624afc970c510872b4')">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-2">
+                    <div class="card shadow-sm h-100">
+
+                        <a href="#">
+                            <img src="img/Kurapica.jpg" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <p class="card-title">Figura de Kurapica</p>
+                            <p class="card-text"><strong>$29.000</strong></p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#"
+                                        class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a class="btn btn-success"
+                                    onClick="addProducto(3, '491729fc9f89d4e67a0612624afc970c510872b4')">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-2">
+                    <div class="card shadow-sm h-100">
+
+                        <a href="#">
+                            <img src="img/Ichigo.jpg" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <p class="card-title">Figura de Ichigo</p>
+                            <p class="card-text"><strong>$35.000</strong></p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#"
+                                        class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a class="btn btn-success"
+                                    onClick="addProducto(3, '491729fc9f89d4e67a0612624afc970c510872b4')">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-2">
+                    <div class="card shadow-sm h-100">
+
+                        <a href="#">
+                            <img src="img/NarutoFigura.jpg" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <p class="card-title">Figura de Uzumaki Naruto</p>
+                            <p class="card-text"><strong>$45.000</strong></p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#"
+                                        class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a class="btn btn-success"
+                                    onClick="addProducto(3, '491729fc9f89d4e67a0612624afc970c510872b4')">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="item">
-            <figure>
-                <img src="img/GojoBandai.jpg" alt="producto" />
-            </figure>
-            <div class="info-product">
-                <h2>Gojou Satoru</h2>
-                <p class="precio">$30.000</p>
-                <button>Añadir al carrito</button>
+    </main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="img/LogoMaxGames3.png" alt="Logo de MaxGames">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Somos una tienda de figuras con base en Viña del Mar y administrada por su propio dueño.</p>
+                <p>Nuestros productos son 100% originales </p>
+            </div>
+            <div class="box">
+                <h2>SÍGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
             </div>
         </div>
-        <div class="item">
-            <figure>
-                <img src="img/ItadoriFig.jpg" alt="producto" />
-            </figure>
-            <div class="info-product">
-                <h2>Itadori</h2>
-                <p class="precio">$24.900</p>
-                <button>Añadir al carrito</button>
-            </div>
+        <div class="grupo-2">
+            <small>&copy;2023 <b>MaxGames</b> - Todos los Derechos Reservados.</small>
         </div>
-        <div class="item">
-            <figure>
-                <img src="img/Ichigo.jpg" alt="producto" />
-            </figure>
-            <div class="info-product">
-                <h2>Kurapica</h2>
-                <p class="precio">$15.900</p>
-                <button>Añadir al carrito</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/NarutoFigura.jpg" alt="producto" />
-            </figure>
-            <div class="info-product">
-                <h2>Naruto</h2>
-                <p class="precio">$30.000</p>
-                <button>Añadir al carrito</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/GokuFigura.jpg" alt="producto" />
-            </figure>
-            <div class="info-product">
-                <h2>Goku</h2>
-                <p class="precio">$35.000</p>
-                <button>Añadir al carrito</button>
-            </div>
-        </div>
-    </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"></script>
 
 </html>
