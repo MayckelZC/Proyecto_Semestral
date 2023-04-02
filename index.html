@@ -5,12 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MaxGames</title>
+    <title>MaxGames - Tienda de juguetes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,600&display=swap" rel="stylesheet">  
+    <link  rel="Icon" href="img/MG.png">
 </head>
 
 <body class="background-index">
@@ -43,7 +47,7 @@
                             </button>
                         </form>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Carrito</a>
+                            <a href="carrito.html" class="nav-link">Carrito</a>
                         </li>
                         <li class="nav-item">
                             <a href="cuenta.html" class="nav-link">Cuenta</a>
@@ -83,7 +87,7 @@
 
     </section>
     <section>
-        <h1 style="text-align: center;">Figuras</h1>
+        <h1 id="figura">Figuras</h1>
     </section>
     <section>
         <main class="flex-shrink-0">
@@ -92,8 +96,8 @@
                     <div class="col mb-2">
                         <div class="card shadow-sm h-100">
 
-                            <a href="#">
-                                <img src="img/TanjiroFigure.jpg" class="card-img-top">
+                            <a href="Tanjiro.html">
+                                <img id="tanjiro" src="img/tanjiro.png" class="card-img-top">
                             </a>
 
                             <div class="card-body">
@@ -105,8 +109,10 @@
                                     <div class="btn-group">
                                         <a href="#" class="btn btn-primary">Detalles</a>
                                     </div>
+                                    <div data-pushbar-id="pushbar-carrito" class="pushbar from right pushbar-carrito"></div>
                                     <a class="btn btn-success"
                                         onClick="addProducto(1, '026a8089ff9ce1c296464138aad4080fe96bd25e')">Agregar</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -114,7 +120,7 @@
                     <div class="col mb-2">
                         <div class="card shadow-sm h-100">
 
-                            <a href="#">
+                            <a href="ZoroFigure.html">
                                 <img src="img/ZoroFigure.jpg" class="card-img-top">
                             </a>
 
@@ -136,7 +142,7 @@
                     <div class="col mb-2">
                         <div class="card shadow-sm h-100">
 
-                            <a href="#">
+                            <a href="JotaroFigura.html">
                                 <img src="img/JotaroFigura.jpg" class="card-img-top">
                             </a>
 
@@ -158,7 +164,7 @@
                     <div class="col mb-2">
                         <div class="card shadow-sm h-100">
 
-                            <a href="#">
+                            <a href="Doraemon.html">
                                 <img src="img/Doraemon.jpg" class="card-img-top">
                             </a>
 
@@ -217,7 +223,6 @@
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
     </script>
-    <footer style="background-color: skyblue;"></footer>
 </body>
 
 </html>

@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuenta</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denji</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +16,12 @@
     <link  rel="Icon" href="img/MG.png">
 </head>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-
 </head>
 
-<body class="background-cuenta">
+<body class="background-detalles">
     <header>
         <!-- Navbar -->
-        <nav id="navCuenta" class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid container">
                 <a href="index.html" class="navbar-brand"><img src="img/LogoMaxGames3.png" alt="Logo de MaxGames"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -59,20 +58,55 @@
             </div>
             </div>
     </header>
-    <main>
-        <section class="form-register">
-            <h4>Formulario Registro</h4>
-            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-            <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
-            <p> <a href="#">Estoy de acuerdo conTerminos y Condiciones</a></p>
-            <input class="botons" type="submit" value="Registrar">
-            <p><a href="#">¿Ya tengo Cuenta?</a></p>
-        </section>
+    <section class="figuras-ventas">
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="product-imgs">
+                    <div class="img-display">
+                        <div class="img-showcase">
+                            <img src="img/Ichigo.png" alt="Imagen de Figura">
+                        </div>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">Ichigo</h2>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4(31)</span>
+                    </div>
 
-    </main>
-    <!-- Pie de pagina -->
+                    <div class="product-price">
+                        <p class="last-price">Precio: <span>$35.000</span></p>
+                    </div>
+
+                    <div class="product-detail">
+                        <h2>Sobre esta figura:</h2>
+                        <ul>
+                            <li>Nombre del Producto: Figura Ichigo</li>
+                            <li>Tamaño: 13cm</li>
+                            <li>Marca: Banpresto</li>
+                            <li>Material: PVC</li>
+                            <li>Disponibilidad: <span >En Stock</span></li>
+                            <li>Categoría: <span>Shonen</span></li>
+                            <li>Envío: <span>Gratis</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="purchase-info">
+                        
+                        <button type="button" class="btn">
+                            Agregar al Carrito <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <button type="button" class="btn">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pie de Página -->
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
@@ -102,10 +136,14 @@
         </div>
 
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    </script>
+    <footer style="background-color: skyblue;"></footer>
 </body>
 
 </html>

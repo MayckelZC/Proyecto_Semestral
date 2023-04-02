@@ -4,9 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
-
+body{
+  font-family: Poppins,sans-serif;
+}
 /* Carrousel Imagenes */
 .carousel-item {
   width: 100%;
@@ -78,7 +81,8 @@
 }
 
 .background-cuenta {
-  background-image: url(/img/wallpaper.jpg);
+  background-image: url(/img/wallpaper.jpg)
+  
 }
 
 /* Formulario de Contacto*/
@@ -200,9 +204,10 @@ textarea {
   line-height: 45px;
   color: #fff;
   margin-right: 10px;
-  background-color: orange;
+  background-color: rgba(169,52,102,255);
   text-align: center;
   transition: all 300ms ease;
+  border-radius: 30px;
 }
 
 .pie-pagina .grupo-1 .red-social a:hover {
@@ -210,14 +215,15 @@ textarea {
 }
 
 .pie-pagina .grupo-2 {
-  background-color: orange;
-  padding: 15px 10px;
+  background-color: rgba(169,52,102,255);
+  padding: 20px 10px;
   text-align: center;
   color: #fff;
 }
 
 .pie-pagina .grupo-2 small {
   font-size: 15px;
+
 }
 
 @media screen and (max-width:800px) {
@@ -237,8 +243,15 @@ textarea {
 .navbar-text,
 .navbar-brand .nav-link {
   color: white;
+  
 }
-
+.nav-link{
+  margin-right: 50px;
+  font-size: 18px;
+}
+.navbar-brand{
+  margin-right: 100px;
+}
 /* Navbar Logo */
 .navbar-brand img {
   display: flex;
@@ -323,10 +336,12 @@ img {
   padding: 2rem 1rem;
 }
 
-.figuras-ventas{
+.figuras-ventas {
   background-color: orange;
   background-image: url(/img/wallpaper.jpg);
+  
 }
+
 .product-title {
   font-size: 3rem;
   text-transform: capitalize;
@@ -376,7 +391,7 @@ img {
 .product-detail ul li {
   margin: 0;
   background-size: 18px;
- 
+
   margin: 0.4rem 0;
   font-weight: 600;
   opacity: 0.9;
@@ -422,6 +437,135 @@ img {
   opacity: 0.9;
 }
 
+/*Separacion de navbar hacia abajo*/
+.navbar-expand-lg{
+  margin: 0px 0px 30px 0px;
+}
+
+
+/*Fotos ajuste tamaño*/
+#kurapica{width: 75%;} 
+#tanjiro{width: 85%;}
+
+/*CARRITO*//*CARRITO*//*CARRITO*//*CARRITO*/
+
+#cart-container{
+  overflow-x: auto;
+}
+/*Ajustes para el overflow*/
+#cart-container table{
+	  border-collapse:collapse;
+	  width: 100%;
+	  table-layout: fixed;
+    white-space: nowrap;
+    
+  }
+
+#cart-container table thead{
+   font-weight: 700;
+   
+  } 
+/*Color y posicion de la barra de articulos*/
+#cart-container table thead td{
+    
+    background: orange;
+    color: #fff;
+    border: none;
+    padding: 6px 0px;
+    
+  }  
+/*Alineacion de texto dentro de la tabla y tamaño bordes*/
+#cart-container table td {
+    border: 1px solid #b6b3b6;  
+    text-align: center;
+} 
+/*los tamaños de los espacios dentro de la tabla*/
+#cart-container table td:nth-child(1){
+  width: 100px;
+}
+#cart-container table td:nth-child(2),
+#cart-container table td:nth-child(3){
+  width: 200px;
+}
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6){
+  width: 170px;
+}
+
+/*Tamaño imagenes dentro de la tabla*/
+#cart-container table tbody img{
+  width: 100px;
+  height: 80px;
+  margin-left: 23%;
+  object-fit: cover;
+ } 
+/*Color basurero o remover*/
+ #cart-container table tbody i{
+  color: #8d8c89;
+
+ } 
+/*Bordes de las barras Cupon y Total*/
+#cart-bottom .coupon>div,
+#cart-bottom .total>div{
+  border: 1px solid #b6b3b6;  
+
+}
+/*Color y posicion barra Cupon*/
+#cart-bottom .coupon h5{
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-weight: 700;
+}
+/*posicion Texto dentro de cupon*/
+#cart-bottom .coupon p{
+  padding: 0px 12px;
+
+}
+/*Color y posicion barra Total*/
+#cart-bottom .total h5{
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-weight: 700;
+}
+/*el padding dentro de total*/
+#cart-bottom .total div>div{
+  padding: 0 12px;
+
+}
+/*Color del texto dentro de Total*/
+#cart-bottom .total h6{
+  color: #2a2a2a;
+}
+/*Linea entre Envio y Total*/
+.second-hr{
+  background: #b8b7b3;
+  width: 100%;
+  height: 1px;
+} 
+/*Boton comprobar*/
+#cart-bottom .total div>button {
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: none;
+  background-color: #1d1d1d;
+  color: aliceblue;
+  padding: 13px 30px;
+  margin: 0px 12px 20px 10px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.total{
+  margin: 0px  ;
+}
+/*CARRITO*//*CARRITO*//*CARRITO*//*CARRITO*/
+
+
 @media screen and (min-width: 992px) {
   .figuras-ventas .card {
     display: grid;
@@ -445,4 +589,9 @@ img {
   .product-content {
     padding-top: 0;
   }
+}
+
+#figura{
+  text-align: center;
+  padding: 28px;
 }
