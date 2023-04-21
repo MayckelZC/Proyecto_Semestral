@@ -100,6 +100,14 @@ input:focus~.barra::before{
     left: 0;
 }
 
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: red;
+    padding-top: 20px;
+}
+
 button{
     background: #FDC830; 
     background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
