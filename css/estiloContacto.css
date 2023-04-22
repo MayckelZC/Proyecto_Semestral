@@ -1,3 +1,4 @@
+
 .btn-enviar {
     color: white;
     background-color: red;
@@ -19,4 +20,8 @@
 
 label.error {
     display: inline;
+}
+
+.mt-5{
+    background-image: url(/img/wallpaper.jpg);
 }
