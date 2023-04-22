@@ -16,15 +16,17 @@ body{
   height: 45vw;
 }
 
-/* Boton Contacto*/
+/*Contacto*/
 .background-contacto{
   width: 100%;
   margin: auto;
+  padding: 0;
+  box-sizing: border-box;
   display: grid;
   grid-gap: 50px;
   margin-top: 90px;
-}
 
+}
 
 
 .mt-5 .btn-enviar {
@@ -42,6 +44,8 @@ body{
 .mt-5 .btn-enviar:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+
 
 /* Pie de Pagina */
 .pie-pagina {

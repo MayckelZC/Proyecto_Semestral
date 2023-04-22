@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
 
     $('#contactanos-form').submit(function(e) {
@@ -13,7 +12,7 @@ $(document).ready(function() {
       $(".error").remove();
 
       if (name.length == 0) {
-        $('#name').after('<span class="error">Este campo es obligatorio</span>');
+        $('#name').after('<span class="error">El campo es obligatorio</span>');
       }else if (name.length < 3) {
         $(".error").remove();
         $('#name').after('<span class="error">Este campo debe tener mínimo 3 caracteres</span>');
@@ -25,18 +24,13 @@ $(document).ready(function() {
         }
       }
       if (email.length == 0) {
-        $('#email').after('<span class="error">Este campo es obligatorio</span>');
+        $('#email').after('<span class="error">El campo es obligatorio</span>');
       } else {
         var regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
         var validEmail = regEx.test(email);
         if (!validEmail) {
           $('#email').after('<span class="error">Ingrese un Email válido</span>');
         }
-      }
-      if (order.length == 0) {
-        $('#order').after('<span class="error">Este campo es obligatorio.</span>');
-      }else if (order.length < 6) {
-        $('#order').after('<span class="error">El número de orden es de mínimo 6 caracteres.</span>');
       }
       if (subject.length == 0) {
         $('#subject').after('<span class="error">El asunto es obligatorio.</span>');
@@ -47,7 +41,7 @@ $(document).ready(function() {
           $('#subject').after('<span class="error">Ingrese el asunto</span>');
       }}
       if (mensage.length == 0) {
-        $('#mensage').after('<span class="error">El mensage es obligatorio.</span>');
+        $('#mensage').after('<span class="error">El mensaje es obligatorio.</span>');
       }else{
         var regEx = /^.{20,1000}$/
         var validmensage = regEx.test(mensage);
