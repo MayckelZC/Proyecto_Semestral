@@ -58,31 +58,29 @@
         </nav>
     </header>
     <main>
-        <div class="container-form">
-            <div class="info-form">
-                <h2>Contáctanos</h2>
-                <p>Cualquier cotización, duda o consulta que tengas la puedes realizar a traves del siguiente formulario
-                    de
-                    contacto.
-                    Antes de escribirnos para que sepas del funcionamiento de la tienda y sus términos y condiciones de
-                    uso.
-                    Toda consulta
-                    será respondida a la brevedad o dentro de las figuientes 24 horas hábiles.
-                </p>
-                <a href="#"><i class="fa fa-phone"></i>+569 85014743</a>
-                <a href="#"><i class="fa fa-envelope"></i>Maxgames@gmail.come</a>
-                <a href="#"><i class="fa fa-map-marked"></i>Viña del Mar,Chile</a>
-            </div>
-            <form action="#" autocomplete="off">
-                <input type="text" name="Nombre" placeholder="Ingrese su Nombre" class="campo">
-                <input type="email" name="email" placeholder="Ingrese su correo" class="campo">
-                <textarea name="mensaje" placeholder="Ingrese su mensaje"></textarea>
-                <input type="submit" name="enviar" value="Enviar mensaje" class="btn-enviar">
-            </form>
-            <br>
-            <br>
-        </div>
-        <hr>
+
+            <div class="container mt-5">
+                <h1 class="text-center mb-5" id="form-quest">Contáctanos</h1>
+                <form name="contactanos-form" id="contactanos-form">
+                  <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Ingrese su nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese su email">
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Ingrese el asunto">
+                  </div>
+                  <div class="form-group">
+                    <label for="mensage">Mensaje</label>
+                    <textarea class="form-control" name="mensage" id="mensage"></textarea>
+                  </div>
+                  <input type="submit" name="enviar" value="Enviar mensaje" class="btn-enviar">
+                </form>
+              </div>
     </main>
     <!-- Pie de pagina -->
     <footer class="pie-pagina">
@@ -114,6 +112,12 @@
         </div>
 
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="/js/contacto.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
@@ -122,5 +126,4 @@
         crossorigin="anonymous"></script>
     </script>
 </body>
-
 </html>
