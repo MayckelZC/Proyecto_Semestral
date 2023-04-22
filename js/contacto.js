@@ -5,7 +5,6 @@ $(document).ready(function() {
       e.preventDefault();
       var name = $('#name').val();
       var email = $('#email').val();
-      var order = $('#order').val();
       var subject = $('#subject').val();
       var mensage = $('#mensage').val();
   
@@ -41,12 +40,12 @@ $(document).ready(function() {
           $('#subject').after('<span class="error">Ingrese el asunto</span>');
       }}
       if (mensage.length == 0) {
-        $('#mensage').after('<span class="error">El mensaje es obligatorio.</span>');
+        $('#mensaje').after('<span class="error">El mensaje es obligatorio.</span>');
       }else{
         var regEx = /^.{20,1000}$/
         var validmensage = regEx.test(mensage);
         if (!validmensage) {
-          $('#mensage').after('<span class="error">Ingrese un mínimo de 50 caracteres</span>');
+          $('#mensaje').after('<span class="error">Ingrese un mínimo de 50 caracteres</span>');
       }}
     });
   
