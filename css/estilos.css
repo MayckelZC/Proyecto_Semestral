@@ -1,0 +1,82 @@
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* body */
+body {
+    background-color: orange;
+}
+
+/* Navbar */
+.navbar-text,
+.navbar-brand .nav-link {
+    color: white;
+
+}
+
+.navbar-brand {
+    margin-right: 100px;
+}
+
+/* Navbar Logo */
+.navbar-brand img {
+    display: flex;
+    width: 200px;
+}
+
+.background-cuenta {
+    background-color: white;
+}
+
+.background-contacto {
+    background-color: orange;
+}
+
+.background-index {
+    background-color: orange;
+}
+
+.background-figura {
+    background: orange;
+}
+
+.background-cuenta {
+    background-color: orange;
+}
+
+/* Navbar hover */
+.nav-link {
+    position: relative;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+/*Separacion de navbar hacia abajo*/
+.navbar-expand-lg {
+    margin: 0px 0px 30px 0px;
+}
+
+
+/* Errores Formulario*/
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+label.error {
+    display: inline;
+}
+

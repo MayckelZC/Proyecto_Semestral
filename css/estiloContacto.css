@@ -1,0 +1,22 @@
+.btn-enviar {
+    color: white;
+    background-color: red;
+}
+
+.btn-enviar {
+    margin: 1rem;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+label.error {
+    display: inline;
+}
