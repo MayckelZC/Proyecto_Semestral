@@ -2,6 +2,7 @@
     --colorTextos:#49454567;
 }
 
+<<<<<<< HEAD
 *,
 ::before
 ::after{
@@ -12,6 +13,11 @@
 
 body{
     background: orange;
+=======
+
+.registro{
+    background: orange; 
+>>>>>>> 0404035b5f98b8df9aadaf28d6afe19318e72248
     height: 650px;
     display: flex;
     justify-content: center;

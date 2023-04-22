@@ -8,36 +8,35 @@
     <title>Contacto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="/css/estiloFormulario.css">
+    <link rel="stylesheet" href="/css/estilos.css">
     <!-- Iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
-    <link  rel="Icon" href="img/MG.png">
-</head>
+    <link  rel="Icon" href="/img/MG.png">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body class="background-contacto">
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg na">
             <div class="container-fluid container">
-                <a href="index.html" class="navbar-brand"><img src="img/LogoMaxGames3.png" alt="Logo de MaxGames"></a>
+                <a href="/index.html" class="navbar-brand"><img src="/img/LogoMaxGames3.png" alt="Logo de MaxGames"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="nav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link">Inicio</a>
+                            <a href="/index.html" class="nav-link">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="figuras.html" class="nav-link">Figuras</a>
+                            <a href="/views/categoria/figura.html" class="nav-link">Figuras</a>
                         </li>
                         <li class="nav-item">
-                            <a href="contacto.html" class="nav-link">Contacto</a>
+                            <a href="/views/categoria/contacto.html" class="nav-link">Contacto</a>
                         </li>
                         </li>
                     </ul>
@@ -49,50 +48,47 @@
                             </button>
                         </form>
                         <li class="nav-item">
-                            <a href="carrito.html" class="nav-link">Carrito</a>
+                            <a href="/views/categoria/carrito.html" class="nav-link">Carrito</a>
                         </li>
                         <li class="nav-item">
-                            <a href="cuenta.html" class="nav-link">Cuenta</a>
+                            <a href="/views/categoria/registro.html" class="nav-link">Cuenta</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            </div>
+        </nav>
     </header>
     <main>
-        <div class="container-form">
-            <div class="info-form">
-                <h2>Contáctanos</h2>
-                <p>Cualquier cotización, duda o consulta que tengas la puedes realizar a traves del siguiente formulario
-                    de
-                    contacto.
-                    Antes de escribirnos para que sepas del funcionamiento de la tienda y sus términos y condiciones de
-                    uso.
-                    Toda consulta
-                    será respondida a la brevedad o dentro de las figuientes 24 horas hábiles.
-                </p>
-                <a href="#"><i class="fa fa-phone"></i>+569 85014743</a>
-                <a href="#"><i class="fa fa-envelope"></i>Maxgames@gmail.come</a>
-                <a href="#"><i class="fa fa-map-marked"></i>Viña del Mar,Chile</a>
-            </div>
-            <form action="#" autocomplete="off">
-                <input type="text" name="Nombre" placeholder="Ingrese su Nombre" class="campo">
-                <input type="email" name="email" placeholder="Ingrese su correo" class="campo">
-                <textarea name="mensaje" placeholder="Ingrese su mensaje"></textarea>
-                <input type="submit" name="enviar" value="Enviar mensaje" class="btn-enviar">
-            </form>
-            <br>
-            <br>
-        </div>
-        <hr>
+            <div class="container mt-5">
+                <h1 class="text-center mb-5" id="form-quest">Contáctanos</h1>
+                <form name="contactanos-form" id="contactanos-form">
+                  <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Ingrese su nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese su email">
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Ingrese el asunto">
+                  </div>
+                  <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="form-control" name="mensaje" id="mensaje"></textarea>
+                  </div>
+                  <input type="submit" name="enviar" value="Enviar mensaje" class="btn-enviar">
+                </form>
+              </div>
     </main>
-    <!-- Pie de Página -->
+    <!-- Pie de pagina -->
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="img/LogoMaxGames3.png" alt="Logo de MaxGames">
+                        <img src="/img/LogoMaxGames3.png" alt="Logo de MaxGames">
                     </a>
                 </figure>
             </div>
@@ -116,9 +112,18 @@
         </div>
 
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-        crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="/js/contacto.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    </script>
+</body>
 </html>
