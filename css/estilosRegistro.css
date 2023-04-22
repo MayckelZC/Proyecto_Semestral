@@ -11,10 +11,7 @@
 }
 
 body{
-    background: #FDC830; 
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
-    background: linear-gradient(to right, #F37335, #FDC830);
-
+    background: orange;
     height: 650px;
     display: flex;
     justify-content: center;
