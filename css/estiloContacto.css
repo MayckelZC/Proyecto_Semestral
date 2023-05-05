@@ -1,7 +1,8 @@
-
 .btn-enviar {
+    padding: 5px;
     color: white;
-    background-color: red;
+    background-color: green;
+    border-radius: 4px;
 }
 
 .btn-enviar {
@@ -22,6 +23,7 @@ label.error {
     display: inline;
 }
 
-.mt-5{
-    background-image: url(/img/wallpaper.jpg);
+.space{
+    justify-content: center;
+  
 }

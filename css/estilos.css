@@ -1,15 +1,16 @@
-*::after,
-*::before,
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+body,
+html{
+    width: 100%;
+    height: 100%;
 }
 
 /* body */
 body {
     background-color: orange;
+    font-family: Poppins,sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar */
@@ -18,7 +19,9 @@ body {
     color: white;
 
 }
-
+.nav-item{
+ margin-right: 25px;
+}
 .navbar-brand {
     margin-right: 100px;
 }
@@ -29,6 +32,9 @@ body {
     width: 200px;
 }
 
+#fondoCarrito{
+    background-color: aliceblue;
+}
 .background-cuenta {
     background-color: white;
 }
