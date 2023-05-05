@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/estilosCarrusel.css">
     <link rel="stylesheet" href="css/estilosFooter.css">
     <link rel="stylesheet" href="css/estilosFigura.css">
+    <link rel="stylesheet" href="css/estiloApi.css">
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +22,11 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div>
         <section>
             <!-- Navbar -->
             <header>
-                <nav class="navbar navbar-expand-lg na">
+                <nav class="navbar navbar-expand-lg ">
                     <div class="container-fluid container">
                         <a href="index.html" class="navbar-brand"><img src="img/LogoMaxGames3.png"
                                 alt="Logo de MaxGames"></a>
@@ -57,7 +58,7 @@
                                     <a href="carrito.html" class="nav-link">Carrito</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="formulario.html" class="nav-link">Cuenta</a>
+                                    <a href="registro.html" class="nav-link">Cuenta</a>
                                 </li>
                             </ul>
                         </div>
@@ -136,8 +137,7 @@
                                 <div class="card-footer bg-transparent">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="tanjiroFigura.html"
-                                                class="btn btn-primary">Detalles</a>
+                                            <a href="tanjiroFigura.html" class="btn btn-primary">Detalles</a>
                                         </div>
                                         <div data-pushbar-id="pushbar-carrito"
                                             class="pushbar from right pushbar-carrito"></div>
@@ -184,8 +184,7 @@
                                 <div class="card-footer bg-transparent">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="jotaroFigura.html"
-                                                class="btn btn-primary">Detalles</a>
+                                            <a href="jotaroFigura.html" class="btn btn-primary">Detalles</a>
                                         </div>
                                         <a class="btn btn-success"
                                             onClick="addProducto(3, '491729fc9f89d4e67a0612624afc970c510872b4')">Agregar</a>
@@ -196,6 +195,18 @@
         </section>
         <!-- Fin Figuras -->
         <!-- Inicio API -->
+        <section class="container-api">
+
+            <div class="api">
+                <div class="search-api">
+                    <input type="text" id="movie-name" placeholder="Buscar">
+                    <button id="search-btn">Buscar</button>
+                </div>
+                <div id="result"></div>
+            </div>
+        </section>
+
+
         <!-- Fin API -->
         <!-- Inicio Footer -->
         <footer>
@@ -229,6 +240,7 @@
 
         </footer>
         <!-- Termino de Footer -->
+        <script src="js/api.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
             integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
             crossorigin="anonymous"></script>
