@@ -15,7 +15,6 @@ let getMovie = () => {
    
     else {
         fetch(url).then((resp) => resp.json()).then((data) => {
-
             if (data.Response == "True") {
                 result.innerHTML = `
                     <div class="info">
@@ -41,8 +40,6 @@ let getMovie = () => {
                     <p>${data.Actors}</p>
                 `;
             }
-
- 
             else {
                 result.innerHTML = `<h3 class="msg">${data.Error}</h3>`;
             }
