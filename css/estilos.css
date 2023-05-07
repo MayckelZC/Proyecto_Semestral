@@ -14,6 +14,7 @@ body {
 }
 
 /* Navbar */
+
 .navbar-text,
 .navbar-brand .nav-link {
     color: white;
@@ -35,14 +36,11 @@ body {
 #fondoCarrito{
     background-color: aliceblue;
 }
-.background-cuenta {
-    background-color: white;
-}
 
 .background-contacto {
-    background-color: orange;
+    background-color:  orange;
+   
 }
-
 .background-index {
     background-color: orange;
 }
@@ -50,11 +48,6 @@ body {
 .background-figura {
     background: orange;
 }
-
-.background-cuenta {
-    background-color: orange;
-}
-
 /* Navbar hover */
 .nav-link {
     position: relative;
@@ -66,9 +59,17 @@ body {
 
 /*Separacion de navbar hacia abajo*/
 .navbar-expand-lg {
-    margin: 0px 0px 30px 0px;
+    margin-bottom: 5px;
 }
 
+.btn-outline-success,
+.btn-outline-success:hover,
+.btn-outline-success:active,
+.btn-outline-success:visited {
+    background-color: black;
+    border: white;
+    color: white;
+}
 
 /* Errores Formulario*/
 

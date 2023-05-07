@@ -1,4 +1,7 @@
-
+.registro {
+    background-color: orange;
+    padding-bottom: 3px;
+}
 .formulario {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

@@ -4,6 +4,9 @@
     background-color: green;
     border-radius: 4px;
 }
+.form-group label{
+    padding-top: 24.3px;
+}
 
 .btn-enviar {
     margin: 1rem;
