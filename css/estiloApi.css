@@ -1,19 +1,18 @@
-.search-api input{
-    display: block ;
-    margin: 0 auto;
-    border-radius: 4px;
+
+
+.search-api {
+    display: block;
+    margin-top: 50px;
+    text-align: center;
 }
 #search-btn{
-    
     background-color: rgba(169, 52, 102, 255);
-    display: block ;
-    margin: 0 auto  ;
     border-radius: 4px;
 }
 #result{
     
     margin: 10px;
     padding: 10px;
-    border: orange ;
+    border: rgb(75, 30, 77) ;
     text-align: center;
 }
