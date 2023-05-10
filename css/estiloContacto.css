@@ -5,11 +5,28 @@
     border-radius: 4px;
 }
 .form-group label{
-    padding-top: 24.3px;
+    padding-top: 13px;
 }
 
-.btn-enviar {
-    margin: 1rem;
+.container-boton{
+    margin-top: 20px;
+    justify-content: center;
+    
+}
+
+.btnn{
+    border: 3px solid rgba(100, 100, 100, 0.1);
+    padding: 10px 60px;
+    width: 300px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    background-size: 300%;
+    
+}
+.btn1{
+    background-image: linear-gradient(to left, #00b347 ,#008f39,#00b347);
 }
 
 .error {
