@@ -71,6 +71,10 @@ body {
     color: white;
 }
 
+@media screen {
+    
+}
+
 /* Errores Formulario*/
 
 .error {
