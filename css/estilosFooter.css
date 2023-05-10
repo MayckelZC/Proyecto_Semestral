@@ -1,5 +1,7 @@
 /* Footer */
-
+footer{
+  margin-top: auto;
+}
 .grupo-1 {
     width: 100%;
     max-width: 1200px;
