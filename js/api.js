@@ -41,7 +41,7 @@ let getMovie = () => {
                 `;
             }
             else {
-                result.innerHTML = `<h3 class="msg">${data.Error}</h3>`;
+                result.innerHTML = `<h3 class="msg">No se encontro el anime</h3>`;
             }
         })
 
