@@ -54,10 +54,7 @@ $(document).ready(function() {
         $('#email').val('');
         $('#subject').val('');
         $('#mensaje').val('');
-      } else {
-        
-        alert("El mensaje debe tener al menos 20 caracteres.");
-      }
+      } 
     } else {
       
       alert("Por favor, complete todos los campos del formulario.");
