@@ -22,6 +22,7 @@ body {
 }
 .nav-item{
  margin-right: 25px;
+ white-space: nowrap;
 }
 .navbar-brand {
     margin-right: 100px;
