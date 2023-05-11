@@ -8,26 +8,33 @@
     padding-top: 13px;
 }
 
-.container-boton{
+/*Boton */
+.container-boton button{
     margin-top: 20px;
-    justify-content: center;
-    
+    border: 0 ;
+    background-image: linear-gradient(150deg,#007000,#4ea93b,#4ea93b);
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    font-size: 18px;
+    padding: 5px 5px;
+    cursor: pointer;
+
+}
+.container-boton button span{
+    background-color: #111;
+    padding: 10px 50px;
+    border-radius: 6px;
+    transition: .3s;
 }
 
-.btnn{
-    border: 3px solid rgba(100, 100, 100, 0.1);
-    padding: 10px 60px;
-    width: 300px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #fff;
-    background-size: 300%;
-    
+.container-boton button:hover span{
+    background: none;
 }
-.btn1{
-    background-image: linear-gradient(to left, #00b347 ,#008f39,#00b347);
+.container-boton button:active {
+    transform: scale(0.9);
 }
+
 
 .error {
     color: red;
