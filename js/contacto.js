@@ -45,17 +45,21 @@ $(document).ready(function() {
       var regEx = /^.{20,1000}$/
       var validmensaje = regEx.test(mensaje);
       if (!validmensaje) {
-        $('#mensaje').after('<span class="error">Ingrese un mínimo de 50 caracteres</span>');
+        $('#mensaje').after('<span class="error">Ingrese un mínimo de 20 caracteres</span>');
     }}
-    if (name !== '' && email !== ''&& subject !== ''&& mensaje !== '') {
-      // Si todos los campos están validados, mostrar el mensaje de éxito
-      alert("¡Su mensaje ha sido enviado!");
-      $('#name').val('');
-      $('#email').val('');
-      $('#subject').val('');
-      $('#mensaje').val('');
+    if (name !== '' && email !== '' && subject !== '' && mensaje !== '') {
+      if (validmensaje) {
+        alert("¡Su mensaje ha sido enviado!");
+        $('#name').val('');
+        $('#email').val('');
+        $('#subject').val('');
+        $('#mensaje').val('');
+      } else {
+        
+        alert("El mensaje debe tener al menos 20 caracteres.");
+      }
     } else {
-      // Si falta algún campo por validar, mostrar un mensaje de error o tomar otras acciones necesarias
+      
       alert("Por favor, complete todos los campos del formulario.");
     }
   });
