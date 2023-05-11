@@ -70,7 +70,7 @@
 }
 .articlefotos:hover img:last-child{
     opacity: 1;
-    transform:translateY(10%)
+    transform:translateY(7%)
 }
 
     @media (max-width: 768px) {
