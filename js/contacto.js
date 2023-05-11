@@ -47,6 +47,20 @@ $(document).ready(function() {
       if (!validmensaje) {
         $('#mensaje').after('<span class="error">Ingrese un mínimo de 50 caracteres</span>');
     }}
+    if (name !== '' && email !== ''&& subject !== ''&& mensaje !== '') {
+      // Si todos los campos están validados, mostrar el mensaje de éxito
+      alert("¡Su mensaje ha sido enviado!");
+      $('#name').val('');
+      $('#email').val('');
+      $('#subject').val('');
+      $('#mensaje').val('');
+    } else {
+      // Si falta algún campo por validar, mostrar un mensaje de error o tomar otras acciones necesarias
+      alert("Por favor, complete todos los campos del formulario.");
+    }
   });
+  
+ 
+  
 
 });
