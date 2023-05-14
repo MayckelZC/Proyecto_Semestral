@@ -56,12 +56,9 @@ $(document).ready(function() {
         $('#mensaje').val('');
       } 
     } else {
-      
-      alert("Por favor, complete todos los campos del formulario.");
+
     }
   });
-  
- 
-  
+   
 
 });
