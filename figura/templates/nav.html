@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid container">
+            <a href="{% url 'index' %}" class="navbar-brand"><img src="{% static 'img/LogoMaxGames3.png'%}"
+                    alt="Logo de MaxGames"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'search' %}" class="nav-link">Figuras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'contacto' %}" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <form class="d-flex" role="search" method="GET" action="{% url 'search' %}">
+                        <input class="form-control me-2" name="q" type="search" placeholder="Buscar"
+                            aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">
+                            Buscar
+                        </button>
+                    </form>
+                    <li class="nav-item">
+                        <a href="{% url 'carrito' %}" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            {% if 'carrito' in request.session %}
+                                <span id="cart-counter" class="cart-counter">{{ request.session.carrito }}</span>
+                            {% else %}
+                                <span id="cart-counter" class="cart-counter">0</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="cuentaDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Cuenta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="cuentaDropdown">
+                            <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                            <li><a class="dropdown-item" href="#">Crear cuenta</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<script src="https://kit.fontawesome.com/xxxxxxxxxx.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
