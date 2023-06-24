@@ -1,0 +1,85 @@
+body,
+html{
+    width: 100%;
+    height: 100%;
+}
+
+/* body */
+body {
+    background-color: orange;
+    font-family: Poppins,sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.contenido{
+    align-items: center;
+    justify-content: center;
+}
+
+
+.mensajeError{
+    margin:100px ;
+  
+}
+
+#fondoCarrito{
+    background-color: aliceblue;
+}
+
+.background-contacto {
+    background-color:  orange;
+   
+}
+.background-index {
+    background-color: orange;
+}
+
+.background-figura {
+    background: orange;
+}
+/* Navbar hover */
+.nav-link {
+    position: relative;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+/*Separacion de navbar hacia abajo*/
+.navbar-expand-lg {
+    margin-bottom: 5px;
+}
+
+.btn-outline-success,
+.btn-outline-success:hover,
+.btn-outline-success:active,
+.btn-outline-success:visited {
+    background-color: black;
+    border: white;
+    color: white;
+}
+
+
+
+/* Errores Formulario*/
+
+
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+label.error {
+    display: inline;
+}
+

@@ -1,0 +1,63 @@
+
+body, html {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    
+}
+
+.card {
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card form .form-group {
+    margin-bottom: 20px;
+}
+
+.card form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.card form .form-group input[type="text"],
+.card form .form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card form .form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #428bca;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .card{
+        margin-left: 150px;
+
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    .card{
+        margin-left: 250px;
+
+    }
+
+}

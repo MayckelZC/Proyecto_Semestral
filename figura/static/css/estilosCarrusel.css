@@ -1,0 +1,17 @@
+/* Carrusel Responsivo */
+#carouselExampleAutoplaying .carousel-item{
+    object-fit: cover;
+    object-position: center;
+    height: 40vw;
+}
+
+@media (max-width: 950px){
+#carouselExampleAutoplaying .carousel-caption{
+        height: 6rem;
+    }
+}
+
+.carousel-caption{
+    text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
