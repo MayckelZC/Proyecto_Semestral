@@ -70,10 +70,10 @@
                                     <td>{{ f.anime | title }}</td>
                                     <td>{{ f.marca}}</td>
                                     <td>
-                                        {% if perms.app.change_adm%}
+                                        {% if perms.app.change_figuras%}
                                         <a href="{% url 'modificar_figuras' f.id %}" class="btn btn-primary btn-sm">Modificar</a>
                                         {% endif%}
-                                        {% if perms.app.delete_adm%}
+                                        {% if perms.app.delete_figuras%}
                                         <a href="#" onclick="eliminarFigura({{f.id}})" class="btn btn-danger btn-sm">Eliminar</a>
                                         {% endif %}>
                                     </td>

@@ -85,7 +85,7 @@ def registro(request):
     return render(request, 'registration/registrar.html',context)
 
 
-@permission_required('figura.add_adm')
+@permission_required('figura.add_figuras')
 def agregar_figura(request):
     context={
         'form': FigurasForm()
@@ -99,7 +99,7 @@ def agregar_figura(request):
             context["form"] = formulario
     return render(request, 'figura/adm/agregar.html',context)
 
-@permission_required('figura.view_adm')
+@permission_required('figura.view_figuras')
 def listar_figuras(request):
     figuras= Figuras.objects.all()
     context={
@@ -107,7 +107,7 @@ def listar_figuras(request):
     }
     return render(request, 'figura/adm/listar.html',context )
     
-@permission_required('figura.change_adm')
+@permission_required('figura.change_figuras')
 def modificar_figuras(request, id):
     figura = get_object_or_404(Figuras, id=id)
 
@@ -126,8 +126,8 @@ def modificar_figuras(request, id):
     }
 
     return render(request, 'figura/adm/modificar.html', context)
-    
-@permission_required('figura.delete_adm')
+
+@permission_required('figura.delete_figuras')
 def eliminar_figuras(request, id):
     figuras= get_object_or_404(Figuras, id=id)
     figuras.delete()
