@@ -60,8 +60,12 @@
                             <li><a class="dropdown-item" href="{%url 'login'%}">Iniciar Sesion</a></li>
                             {% endif %}
                             <li><a class="dropdown-item" href="{% url 'registro' %}">Crear cuenta</a></li>
+                            {% if perms.figura.add_adm %}
                             <li><a class="dropdown-item" href="{% url 'agregar_figura' %}">Agregar Figura</a></li>
-                            <li><a class="dropdown-item" href="{% url 'listar_figuras' %}">Listar Figuras</a></li>                        
+                            {% endif%}
+                            {% if perms.figura.views_adm %}
+                            <li><a class="dropdown-item" href="{% url 'listar_figuras' %}">Listar Figuras</a></li>       
+                            {% endif %}                 
                         </ul>
                     </li>
                 </ul>
