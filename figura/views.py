@@ -3,6 +3,7 @@ from .forms import ContactoForm, FigurasForm, CustomUserCreationForm
 from .models import Carrusel , Figuras 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import  permission_required
 
 # Create your views here.
 
