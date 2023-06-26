@@ -4,8 +4,9 @@
     background-color: green;
     border-radius: 4px;
 }
-.form-group label{
-    padding-top: 13px;
+
+.form-control{
+    color:black !important 
 }
 
 /*Boton */
@@ -22,7 +23,7 @@
 
 }
 .container-boton button span{
-    background-color: #111;
+    background-color: rgba(169, 52, 102, 255);
     padding: 10px 50px;
     border-radius: 6px;
     transition: .3s;

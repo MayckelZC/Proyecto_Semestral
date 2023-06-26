@@ -1,10 +1,15 @@
-from django.http import HttpRequest
-from django.shortcuts import render
-from .models import Carrusel , Figuras ,DetalleF
+from django.shortcuts import render, redirect , get_object_or_404
+from .forms import ContactoForm, FigurasForm, CustomUserCreationForm
+from .models import Carrusel , Figuras 
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import permission_required
+
 # Create your views here.
+
 def index(request):
     carrusel = Carrusel.objects.all()
-    figuras = Figuras.objects.all()
+    figuras = Figuras.objects.filter(id__in=[1, 5, 7])
     context = {
         'carrusel': carrusel,
         'figuras': figuras
@@ -14,16 +19,29 @@ def index(request):
 def carrito(request):
     return render(request, 'figura/carrito.html')
 
-def detalleF(request):
-    detalle = DetalleF.objects.all()
-    context ={
-        'detalle':detalle
-    }   
-    return render(request, 'figura/detalleF.html',context)
+def detalleF(request, slug):
+    figuras = get_object_or_404(Figuras, slug=slug)
+    figuras = [figuras]  
+
+    context = {
+        'figuras': figuras
+    }
+
+    return render(request, 'figura/detalleF.html', context)
 
 
 def contacto(request):
-    return render(request, 'figura/contacto.html')
+    data ={
+        'form' : ContactoForm()
+    }
+    if request.method == 'POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "Contacto Guardado"
+        else:
+            data["form"] = formulario    
+    return render(request, 'figura/contacto.html', data)    
 
 def figura(request):
     figuras = Figuras.objects.all()
@@ -52,7 +70,68 @@ def search(request):
 
 
 def registro(request):
-    return render(request, 'figura/registro.html')
+    context={
+        'form':CustomUserCreationForm()
+    }
 
-def iniciarsesion(request):
-    return render(request, 'figura/iniciarsesion.html')  
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request,"Registrado con Exito")           
+            return redirect(to=index)
+        context["form"] = formulario
+    return render(request, 'registration/registrar.html',context)
+
+
+@permission_required('figura.add_figuras')
+def agregar_figura(request):
+    context={
+        'form': FigurasForm()
+    }
+    if request.method == 'POST':
+        formulario= FigurasForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Figura Agregada con Exito")
+        else:
+            context["form"] = formulario
+    return render(request, 'figura/adm/agregar.html',context)
+
+@permission_required('figura.view_figuras')
+def listar_figuras(request):
+    figuras= Figuras.objects.all()
+    context={
+        'figuras' : figuras
+    }
+    return render(request, 'figura/adm/listar.html',context )
+    
+@permission_required('figura.change_figuras')
+def modificar_figuras(request, id):
+    figura = get_object_or_404(Figuras, id=id)
+
+    if request.method == 'POST':
+        formulario = FigurasForm(data=request.POST, instance=figura, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Figura Modificada con Exito")
+            return redirect('listar_figuras')
+    else:
+        formulario = FigurasForm(instance=figura)
+
+    context = {
+        'form': formulario,
+        'figuras': figura,  # Añade 'figuras' al contexto
+    }
+
+    return render(request, 'figura/adm/modificar.html', context)
+
+@permission_required('figura.delete_figuras')
+def eliminar_figuras(request, id):
+    figuras= get_object_or_404(Figuras, id=id)
+    figuras.delete()
+    messages.success(request, "Figura Eliminada con Exito")
+    return redirect(to="listar_figuras")
+    

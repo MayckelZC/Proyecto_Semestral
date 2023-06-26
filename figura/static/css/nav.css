@@ -11,8 +11,12 @@
 .nav-item{
   margin-right: 15px;
 }
+.nav-item a{
+  color: white;
+}
 
 .navbar-nav .nav-link {
+  color: white  ;
   position: relative;
   transition: transform 0.3s;
 }

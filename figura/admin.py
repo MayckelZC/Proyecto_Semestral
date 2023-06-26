@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Categoria, Material
-from .models import Figuras,DetalleF
+from .models import Figuras
 from.models import Contacto
 from.models import Carrusel
 
@@ -17,9 +17,11 @@ class DetallesFAdmin(admin.ModelAdmin):
     list_editable = ["precioDF","disponible"]
     search_fields = ["nombreDF"]
 
+class ContactoAdmin(admin.ModelAdmin):
+    list_display = ["nombre","email","asunto","mensaje"]
+
 admin.site.register(Categoria)
 admin.site.register(Material)
 admin.site.register(Figuras, FigurasAdmin)
-admin.site.register(DetalleF, DetallesFAdmin)
-admin.site.register(Contacto)
+admin.site.register(Contacto,ContactoAdmin)
 admin.site.register(Carrusel)
