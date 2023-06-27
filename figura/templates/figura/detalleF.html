@@ -1,6 +1,7 @@
 {% extends 'figura/base.html'%}
 {% block contenido %}
 {% load static %}
+
 <head>
     <link rel="stylesheet" href="{% static 'css/estiloDetalleFigura.css'%}">
 </head>
@@ -10,7 +11,7 @@
         {%load humanize%}
         <section>
             <section class="figuras-ventas">
-                <div class="card-wrapper">
+                <div class="card-wrapper-center">
                     {%for f in figuras %}
                     <div class="card">
                         <div class="product-imgs">
@@ -50,5 +51,44 @@
                     {%endfor%}
                 </div>
             </section>
+            <br>
+            <br>
+            <section>
+                <div>
+                    <div id="carouselExampleAutoplaying" class="carousel slide ps-0 pe-0" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/ChainsawmanPoster.jpg'%}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption">
+                                    <h3>MaxGames</h3>
+                                    <p>Esperamos que te guste</p>
+                                </div>
+                            </div>
+                            {%for ca in carrusel %}
+                            <div class="carousel-item">
+                                {% if ca.imagenC %}
+                                <img src="{{ ca.imagenC.url }}" class="d-block w-100" alt="...">
+                                {% endif %}
+                                <div class="carousel-caption">
+                                    <h3>MaxGames</h3>
+                                    <p>Siempre los mejores precios</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
 </body>
 {% endblock %}
