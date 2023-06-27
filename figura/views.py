@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import permission_required
 from .cart import Carro
-
+from .models import Contacto
  
 
 # Create your views here.
@@ -186,3 +186,35 @@ def cleancart(request):
     carro=Carro(request)
     carro.limpiar_carro()
     return redirect(to="viewcart")
+
+
+
+def enviarForm(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('name')
+        try:
+            surname = request.POST.get('surname')
+        except:
+            surname = None
+        
+        email = request.POST.get('email')
+        
+        try:
+            asunto = request.POST.get('subject')
+        except:
+            asunto = None
+        
+        try:
+            mensaje = request.POST.get('message')
+        except:
+            mensaje = None
+
+        contacto = Contactos(nombre=nombre, surname=surname, celular=celular , email=email, nro_pedido=nro_pedido, asunto=asunto, mensaje=mensaje, propuesta=propuesta)
+        contacto.save()
+        time.sleep(2)
+        if not request.user.is_superuser:
+            return redirect('index')
+        else:
+            return redirect('respuestas')
+    else:
+        return render(request, 'contactanos.html')
