@@ -1,4 +1,5 @@
 .btn-enviar {
+    margin-top: 10px;
     padding: 5px;
     color: white;
     background-color: green;
@@ -20,7 +21,6 @@
     font-size: 18px;
     padding: 5px 5px;
     cursor: pointer;
-
 }
 .container-boton button span{
     background-color: rgba(169, 52, 102, 255);

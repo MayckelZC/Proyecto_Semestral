@@ -4,6 +4,9 @@ from .models import Carrusel , Figuras
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import permission_required
+from .cart import Carro
+
+ 
 
 # Create your views here.
 
@@ -16,8 +19,6 @@ def index(request):
     }
     return render(request, 'figura/index.html', context)
 
-def carrito(request):
-    return render(request, 'figura/carrito.html')
 
 def detalleF(request, slug):
     figuras = get_object_or_404(Figuras, slug=slug)
@@ -134,4 +135,54 @@ def eliminar_figuras(request, id):
     figuras.delete()
     messages.success(request, "Figura Eliminada con Exito")
     return redirect(to="listar_figuras")
-    
+
+
+
+def viewcart(request):
+    carro = Carro(request)
+    total_carro = carro.importe_total_carro()
+    return render(request, 'figura/carrito.html', {'carro': request.session['carro'], 'total_carro': total_carro})
+
+def agregar_producto(request, figura_id):
+    carro = Carro(request)
+    figura = Figuras.objects.get(id=figura_id)
+    carro.agregar(figura=figura)
+    carro.guardar_carro()  # Guardar el carro en la sesión
+
+    return redirect(to="viewcart")
+
+def eliminar_producto(request, figura_id):
+    carro=Carro(request)
+    figura=Figuras.objects.get(id=figura_id)
+    carro.eliminar(figura=figura)
+    return redirect(to="viewcart")
+
+
+def restar_producto(request, figura_id):
+    carro = Carro(request)
+    figura = Figuras.objects.get(id=figura_id)
+    carro.restar(figura=figura)
+    return redirect(to="viewcart")
+
+
+
+def importe_total_carro(request):
+	total=0
+	if request.user.is_authenticated:
+		if "carro" in request.session:
+			for key, value in request.session[""].items():
+				total= total + int(value["precio"])
+	return total
+
+
+def procesar_compra(request):
+    carro = Carro(request)
+    carro.limpiar_carro()
+    messages.success(request, 'Gracias por su Compra!!')
+
+    return redirect(to='index')
+
+def cleancart(request):
+    carro=Carro(request)
+    carro.limpiar_carro()
+    return redirect(to="viewcart")

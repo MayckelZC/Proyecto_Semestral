@@ -3,7 +3,6 @@
 {%load static%}
 <body>
     <div>
-        <!-- Fin Navbar -->
         {%load humanize%}
             <section class="flex-shrink-0">
                 <div class="container">
@@ -25,18 +24,22 @@
 
                                 <div class="card-body">
                                     <p class="card-title">Figura de {{f.nombreF}}</p>
-                                    <p class="card-text"><strong>${{f.precioF | intword}}</strong></p>
+                                    <p class="card-text"><strong>${{f.precioF | intcomma}}</strong></p>
                                 </div>
                                 <div class="card-footer bg-transparent">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="{% url 'detalleF' f.slug %}"  class="btn btn-primary">Detalles</a>
+                                            <a href="{% url 'detalleF' f.slug %}"  class="btn btn-primary">
+                                                <i class="bi bi-info-circle-fill"> Detalle</i>
+                                            </a>
                                         </div>
                                         <div data-pushbar-id="pushbar-carrito"
                                             class="pushbar from right pushbar-carrito"></div>
-                                        <a class="btn btn-success"
-                                            onClick="addProducto(1, '026a8089ff9ce1c296464138aad4080fe96bd25e')">Agregar</a>
-
+                                           
+                                            <a href="{% url 'addcart' f.id %}" class="btn btn-danger" type="button">
+                                                <i class="bi-cart-fill me-1"> Agregar</i> 
+                                            </a>
+                                              
                                     </div>
                                 </div>
                             </div>
@@ -47,5 +50,11 @@
                     {% endif %}
                         
             </section>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
 </body>
 {% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'figura/base.html' %}
+{% load static %}
+
+{% block contenido %}
+    <div id="fondoCarrito">
+        <section id="blog-home" class="pt-1 mt-1 container">
+            <h2 class="font-weight-bold pt-4">CARRITO DE COMPRAS</h2>
+            <hr>
+        </section>
+
+        <section id="cart-container" class="container my-5">
+            <table width="100%">
+                <thead>
+                    <tr class="cart-item">
+                        <td>Remover</td>
+                        <td>Imagen</td>
+                        <td>Producto</td>
+                        <td>Precio*Cant</td>
+                        <td>Cantidad</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% load humanize%}
+                    {% if request.session.carro %}
+                        {% for key, value in request.session.carro.items %}
+                            <tr class="cart-item">
+                                <td>
+                                    <a href="{% url 'delcart' key %}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <img src="{{ value.imagen }}" alt="">
+                                </td>
+                                <td>
+                                    <h5>{{ value.nombre }}</h5>
+                                </td>
+                                <td>${{ value.precio | intcomma }}</td>
+                                <td class="text-center" colspan="1">
+                                    {{ value.cantidad }}
+                                    <a href="{% url 'addcart' value.figura_id %}" class="btn btn-warning btn-sm" type="button">
+                                        <i class="bi bi-plus-circle"></i> </a>
+                                    <a href="{% url 'restarcart' value.figura_id %}" class="btn btn-warning btn-sm" type="button">
+                                        <i class="bi bi-dash-lg"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5">
+                                <div class="alert alert-danger text-center">
+                                    No se agregaron productos al carrito
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </section>
+
+        <section id="cart-bottom" class="container">
+            <div class="row">
+                <div class="coupon col-lg-6 col-md-6 col-12 mb-4">
+                    <div>
+                        <h5>CUPON</h5>
+                        <p>Proximamente cupones</p>
+                    </div>
+                </div>
+
+                <div class="total col-lg-6 col-md-6 col-12 mb-4">
+                    <div>
+                        <h5>TOTAL</h5>
+                        <div class="d-flex justify-content-between">
+                            <h6>Subtotal</h6>
+                            <p>${{ total_carro | intcomma}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6>Envío</h6>
+                            <p>Gratis</p>
+                        </div>
+                        <hr class="second-hr">
+                        <div class="d-flex justify-content-between">
+                            <h6>Total</h6>
+                            <p>${{ total_carro | intcomma}}</p>
+                        </div>
+                        <button class="ml-auto" > 
+                            <a href="{% url 'procesar_compra' %}">COMPROBAR LA COMPRA</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

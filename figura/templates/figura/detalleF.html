@@ -37,10 +37,11 @@
                                         </ul>
                                     </div>
                                     <div class="purchase-info">
-                                        <button type="button" class="btn">
-                                            Agregar al Carrito <i class="fas fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" class="btn">Comprar</button>
+                                        <div data-pushbar-id="pushbar-carrito"
+                                                class="pushbar from right pushbar-carrito"></div>
+                                                <a href="{% url 'addcart' f.id %}" class="btn btn-danger" type="button">
+                                                    <i class="bi-cart-fill me-1"> Agregar al carrito</i> 
+                                                </a>
                                     </div>
                                 </div>
                             </div>

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'figura',
     'django.contrib.humanize',
+    'django_bootstrap_icons',
     
     
 ]

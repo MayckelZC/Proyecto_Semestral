@@ -1,4 +1,6 @@
-{%load static%}
+{% extends 'figura/base.html' %}
+{% load static %}
+{% block contenido %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,9 +43,6 @@
 
 
 <body>
-    
-    {%include "nav.html"%}
-        <!-- Fin Navbar -->
     {% load humanize %}
             <br>
             <br>
@@ -85,12 +84,6 @@
                     </div>
                 </div>
             </div>
-
-         
-        <!-- Inicio Footer -->
-    {% include "footer.html"%}
-
-        <!-- Termino de Footer -->
         <script src="{% static 'js/formulario.js'%}">
         </script>
         <script 
@@ -116,5 +109,4 @@
             {% endfor %}
         {% endif  %}
 </body>
-
-</html>
+{% endblock %}

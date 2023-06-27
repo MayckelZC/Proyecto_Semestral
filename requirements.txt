@@ -4,3 +4,4 @@ django-admin-interface
 django-crispy-forms
 crispy-bootstrap5
 django-autoslug
+django_bootstrap_icons

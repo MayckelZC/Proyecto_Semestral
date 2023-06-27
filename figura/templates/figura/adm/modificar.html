@@ -1,4 +1,6 @@
-{%load static%}
+{% extends 'figura/base.html' %}
+{% load static %}
+{% block contenido %}
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +32,6 @@
     }
 </style>
 <body>
-        {%include "nav.html"%}
         <div class="container">
             <div class="card">
                 <div class="card-body">
@@ -52,9 +53,6 @@
                 </div>
             </div>  
         </div>     
-        {% include "footer.html"%}
-          
-        <!-- Termino de Footer -->
         <script src="{% static 'js/formulario.js'%}">
         </script>
         <script 
@@ -68,5 +66,4 @@
             crossorigin="anonymous">
         </script>
 </body>
-
-</html>
+{% endblock %}

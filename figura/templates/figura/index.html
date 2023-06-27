@@ -75,12 +75,15 @@
                                     <div class="card-footer bg-transparent">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <a href="{% url 'detalleF' f.slug  %}"  class="btn btn-primary">Detalles</a>
+                                                <a href="{% url 'detalleF' f.slug %}"  class="btn btn-primary">
+                                                    <i class="bi bi-info-circle-fill"> Detalle</i>
+                                                </a>
                                             </div>
                                             <div data-pushbar-id="pushbar-carrito"
                                                 class="pushbar from right pushbar-carrito"></div>
-                                            <a class="btn btn-success"
-                                                onClick="addProducto(1, '026a8089ff9ce1c296464138aad4080fe96bd25e')">Agregar</a>
+                                                <a href="{% url 'addcart' f.id %}" class="btn btn-danger" type="button">
+                                                    <i class="bi-cart-fill me-1">Agregar</i> 
+                                                </a>
 
                                         </div>
                                     </div>
@@ -100,7 +103,20 @@
                 <div id="result"></div>
             </div>
         </section>
-        <!-- Fin API -->
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <!-- Fin API -->
+        {% if messages %} 
+            {% for message in messages %}
+            <script>
+                Swal.fire({
+                    "title": "Felicitaciones!!",
+                    "text": "{{ message }}",
+                    "icon": "success"
+                })
+            </script>
+            {% endfor %} 
+        {% endif %}    
 </body>
 {% endblock %}

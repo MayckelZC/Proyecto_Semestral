@@ -4,6 +4,7 @@
 .btn-primary:visited {
     background-color: orange;
     border: black;
+    margin-right: 10px;
 }
 
 .mb-2:hover {
