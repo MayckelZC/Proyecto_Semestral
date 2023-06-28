@@ -1,28 +1,93 @@
 {% extends 'figura/base.html' %}
 {% load static %}
-
+{% load humanize %}
 {% block contenido %}
+
+
+<section class="container">
     <div id="fondoCarrito">
         <section id="blog-home" class="pt-1 mt-1 container">
             <h2 class="font-weight-bold pt-4">CARRITO DE COMPRAS</h2>
             <hr>
         </section>
 
-        <section id="cart-container" class="container my-5">
-            <table width="100%">
-                <thead>
-                    <tr class="cart-item">
-                        <td>Remover</td>
-                        <td>Imagen</td>
-                        <td>Producto</td>
-                        <td>Precio*Cant</td>
-                        <td>Cantidad</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% load humanize%}
-                    {% if request.session.carro %}
-                        {% for key, value in request.session.carro.items %}
+        <div class="row">
+            <div class="cold-md-8">
+
+                <div class="card">
+                    <div class="card body">
+                        <div class="table-responsive table-hover">
+                            <table class="table table-striped">
+                                <tr>    
+                                    <th>Remover</th>
+                                    <th>Imagen</th>
+                                    <th>Priducto</th>
+                                    <th>Precio*Cant</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                </tr>
+                                
+                                {% load humanize%}
+                                {% if request.session.carro %}
+                                {% for key, value in request.session.carro.items %}
+                                <tr>
+                                    <td>{{value.nombre}}</td>
+                                    <td>
+                                        <a href="{% url 'addcart' value.figura_id %}" class="btn btn-dark"></a>
+                                        <a href="{% url 'restarcart' value.figura_id %}" class="btn btn-dark"></a>
+                                    </td>
+                                    <td>${{ value.precio | intcomma }}</td>
+                                    <td><a href="{% url 'restarcart' value.figura_id %}" class="btn btn-danger ">Eliminar</a></td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <div class="text-bg-secondary p-3 fw-bold text-center fs-3">Sin productos</div>
+                                {% endif %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"></div>
+                    <div class="card-body">
+                        <div class="table-responsive table-hover">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Resumen de la compra</th>
+                                    <th></th>
+                                </tr>
+                                <td>Total de la Compra: </td>
+                                <td>${{ value.precio | intcomma }}</td>
+                                <tr>
+                                    <td> <a href="" class="btn btn-warning">Comprar</a> </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <section id="cart-container" class="container my-5">
+                    <table width="100%">
+                        <thead>
+                            <tr class="cart-item">
+                                <td>Remover</td>
+                                <td>Imagen</td>
+                                <td>Producto</td>
+                                <td>Precio*Cant</td>
+                                <td>Cantidad</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% load humanize%}
+                            {% if request.session.carro %}
+                            {% for key, value in request.session.carro.items %}
                             <tr class="cart-item">
                                 <td>
                                     <a href="{% url 'delcart' key %}">
@@ -38,58 +103,66 @@
                                 <td>${{ value.precio | intcomma }}</td>
                                 <td class="text-center" colspan="1">
                                     {{ value.cantidad }}
-                                    <a href="{% url 'addcart' value.figura_id %}" class="btn btn-warning btn-sm" type="button">
+                                    <a href="{% url 'addcart' value.figura_id %}" class="btn btn-warning btn-sm"
+                                        type="button">
                                         <i class="bi bi-plus-circle"></i> </a>
-                                    <a href="{% url 'restarcart' value.figura_id %}" class="btn btn-warning btn-sm" type="button">
+                                    <a href="{% url 'restarcart' value.figura_id %}" class="btn btn-warning btn-sm"
+                                        type="button">
                                         <i class="bi bi-dash-lg"></i>
                                     </a>
                                 </td>
                             </tr>
-                        {% endfor %}
-                    {% else %}
-                        <tr>
-                            <td colspan="5">
-                                <div class="alert alert-danger text-center">
-                                    No se agregaron productos al carrito
+                            {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td colspan="5">
+                                    <div class="alert alert-danger text-center">
+                                        No se agregaron productos al carrito
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </section>
+    
+                <section id="cart-bottom" class="container">
+                    <div class="row">
+                        <div class="coupon col-lg-6 col-md-6 col-12 mb-4">
+                            <div>
+                                <h5>CUPON</h5>
+                                <p>Proximamente cupones</p>
+                            </div>
+                        </div>
+    
+                        <div class="total col-lg-6 col-md-6 col-12 mb-4">
+                            <div>
+                                <h5>TOTAL</h5>
+                                <div class="d-flex justify-content-between">
+                                    <h6>Subtotal</h6>
+                                    <p>${{ total_carro | intcomma}}</p>
                                 </div>
-                            </td>
-                        </tr>
-                    {% endif %}
-                </tbody>
-            </table>
-        </section>
-
-        <section id="cart-bottom" class="container">
-            <div class="row">
-                <div class="coupon col-lg-6 col-md-6 col-12 mb-4">
-                    <div>
-                        <h5>CUPON</h5>
-                        <p>Proximamente cupones</p>
+                                <div class="d-flex justify-content-between">
+                                    <h6>Envío</h6>
+                                    <p>Gratis</p>
+                                </div>
+                                <hr class="second-hr">
+                                <div class="d-flex justify-content-between">
+                                    <h6>Total</h6>
+                                    <p>${{ total_carro | intcomma}}</p>
+                                </div>
+                                <button class="ml-auto">
+                                    <a href="{% url 'procesar_compra' %}">COMPROBAR LA COMPRA</a>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="total col-lg-6 col-md-6 col-12 mb-4">
-                    <div>
-                        <h5>TOTAL</h5>
-                        <div class="d-flex justify-content-between">
-                            <h6>Subtotal</h6>
-                            <p>${{ total_carro | intcomma}}</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6>Envío</h6>
-                            <p>Gratis</p>
-                        </div>
-                        <hr class="second-hr">
-                        <div class="d-flex justify-content-between">
-                            <h6>Total</h6>
-                            <p>${{ total_carro | intcomma}}</p>
-                        </div>
-                        <button class="ml-auto" > 
-                            <a href="{% url 'procesar_compra' %}">COMPROBAR LA COMPRA</a>
-                        </button>
-                    </div>
-                </div>
+                </section>
             </div>
-        </section>
+
+        </div>
     </div>
-{% endblock %}
+
+
+</section>
+
