@@ -58,23 +58,26 @@
                     <div id="carouselExampleAutoplaying" class="carousel slide ps-0 pe-0" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{% static 'img/ChainsawmanPoster.jpg'%}" class="d-block w-100" alt="...">
+                                <img src="{% static 'img/bnha.jpg'%}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption">
                                     <h3>MaxGames</h3>
-                                    <p>Esperamos que te guste</p>
+                                    <p>La Mejor Selección de Figuras</p>
                                 </div>
                             </div>
-                            {%for ca in carrusel %}
                             <div class="carousel-item">
-                                {% if ca.imagenC %}
-                                <img src="{{ ca.imagenC.url }}" class="d-block w-100" alt="...">
-                                {% endif %}
+                                <img src="{% static 'img/jujutsu.jpg'%}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption">
                                     <h3>MaxGames</h3>
-                                    <p>Siempre los mejores precios</p>
+                                    <p>La Mejor Selección de Figuras</p>
                                 </div>
                             </div>
-                            {% endfor %}
+                            <div class="carousel-item">
+                                <img src="{% static 'img/muchos.png'%}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption">
+                                    <h3>MaxGames</h3>
+                                    <p>La Mejor Selección de Figuras</p>
+                                </div>
+                            </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                             data-bs-slide="prev">
