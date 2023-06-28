@@ -30,19 +30,7 @@ def detalleF(request, slug):
 
     return render(request, 'figura/detalleF.html', context)
 
-
-def contacto(request):
-    data ={
-        'form' : ContactoForm()
-    }
-    if request.method == 'POST':
-        formulario = ContactoForm(data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            data["mensaje"]= "Contacto Guardado"
-        else:
-            data["form"] = formulario    
-    return render(request, 'figura/contacto.html', data)    
+  
 
 def figura(request):
     figuras = Figuras.objects.all()
@@ -186,3 +174,16 @@ def cleancart(request):
     carro=Carro(request)
     carro.limpiar_carro()
     return redirect(to="viewcart")
+
+def contacto(request):
+    data ={
+        'form' : ContactoForm()
+    }
+    if request.method == 'POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "Contacto Guardado"
+        else:
+            data["form"] = formulario    
+    return render(request, 'figura/contacto.html', data)  
