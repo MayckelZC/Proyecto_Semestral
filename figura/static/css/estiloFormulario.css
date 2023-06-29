@@ -1,6 +1,9 @@
-
-
-
+#card-body-1{
+	background: linear-gradient(rgb(243, 103, 203), rgb(175, 25, 213));
+	border-radius: 5px;
+	border-color: #000;
+	
+}
 
 /*CSS de Tabla Listar*/
 
@@ -37,9 +40,7 @@
 }
 
 
-.card-body{
-	background-color: white; 
-}
+
 .formulario {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

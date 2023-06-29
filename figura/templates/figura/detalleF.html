@@ -9,45 +9,47 @@
 <body>
     <div class="container-fluid">
         {%load humanize%}
-        <section>
+        <section>   
             <section class="figuras-ventas">
-                <div class="card-wrapper-center">
-                    {%for f in figuras %}
-                    <div class="card">
-                        <div class="product-imgs">
-                            <div class="img-display">
-                                <div class="img-showcase">
-                                    {% if f.imagenP %}
-                                    <img src="{{ f.imagenF.url }}">
-                                    {% endif %}
-
+                <div class="card-wrapper">
+                    {%for f in figuras  %}
+                        <div class="card">
+                            <div class="product-imgs">
+                                <div class="img-display">
+                                    <div class="img-showcase">
+                                        {% if f.imagenP %}
+                                        <img src="{{ f.imagenF.url }}">
+                                        {% endif %}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2 class="product-title">{{ f.nombreF }}</h2>
+                                <div class="product-price">
+                                    <p class="last-price">Precio:$ <span>{{ f.precioF | intcomma }}</span></p>
+                                </div>
+                                <div class="product-detail">
+                                    <h2>Sobre esta figura:</h2>
+                                    <ul>
+                                        <li>Nombre del Producto: {{ f.nombreF }}</li>
+                                        <li>Tamaño: {{ f.tamano }}</li>
+                                        <li>Marca: {{ f.marca }}</li>
+                                        <li>Anime: {{ f.anime }}</li>
+                                        <li>Material: {{ f.material }}</li>
+                                        <li>Categoría: {{ f.categoria }}</li>
+                                        <li>Envío: {{ f.envio }}</li>
+                                    </ul>
+                                </div>
+                                <div class="purchase-info">
+                                    <div data-pushbar-id="pushbar-carrito"
+                                            class="pushbar from right pushbar-carrito"></div>
+                                            <a href="{% url 'addcart' f.id %}" class="btn btn-danger" type="button">
+                                                <i class="bi-cart-fill me-1"> Agregar al carrito</i> 
+                                            </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h2 class="product-title">{{ f.nombreF }}</h2>
-                            <div class="product-price">
-                                <p class="last-price">Precio:$ <span>{{ f.precioF | intcomma }}</span></p>
-                            </div>
-                            <div class="product-detail">
-                                <h2>Sobre esta figura:</h2>
-                                <ul>
-                                    <li>Nombre del Producto: {{ f.nombreF }}</li>
-                                    <li>Tamaño: {{ f.tamano }}</li>
-                                    <li>Marca: {{ f.marca }}</li>
-                                    <li>Material: {{ f.material }}</li>
-                                    <li>Categoría: {{ f.categoria }}</li>
-                                    <li>Envío: {{ f.envio }}</li>
-                                </ul>
-                            </div>
-                            <div class="purchase-info">
-                                <div data-pushbar-id="pushbar-carrito" class="pushbar from right pushbar-carrito"></div>
-                                <a href="{% url 'addcart' f.id %}" class="btn btn-danger" type="button">
-                                    <i class="bi-cart-fill me-1"> Agregar al carrito</i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     {%endfor%}
                 </div>
             </section>
